@@ -54,7 +54,7 @@ def calculate_time_difference(parsed_data):
                 # 각 시간 출력
                 print(f"NAV Value: NAV_MAP_TRAFFIC_AVAILABLE_END_CID 의 타임은 {formatted_traffic_end_time} 초")
                 print(f"NAV Value: NAV_MAP_TRAFFIC_AVAILABLE_START_CID 의 타임은 {formatted_traffic_start_time} 초")
-                print(f"시간 차: {time_difference:.4f} 초")
+                print(f"시간 차: {time_difference:.4f} 초\n")
             else:
                 print("타임 포맷팅 중 오류 발생으로 계산을 수행할 수 없습니다.")
         else:
@@ -80,7 +80,7 @@ def calculate_time_difference(parsed_data):
                 # 각 시간 출력
                 print(f"NAV Value: NAV_MAP_AVAILABLE_START_CID 의 타임은 {formatted_available_start_time} 초")
                 print(f"NAV Value: NAV_MAP_TRAFFIC_AVAILABLE_START_IC 의 타임은 {formatted_traffic_start_ic_time} 초")
-                print(f"시간 차: {time_difference_ic:.4f} 초")
+                print(f"시간 차: {time_difference_ic:.4f} 초\n")
             else:
                 print("타임 포맷팅 중 오류 발생으로 계산을 수행할 수 없습니다.")
         else:

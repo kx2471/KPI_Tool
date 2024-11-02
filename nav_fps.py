@@ -34,8 +34,8 @@ def calculate_statistics(fps_values):
     ic_min = min(ic_values) if ic_values else None
 
     return {
-        "NAV_MAP_FPS_CID": {"average": cid_avg, "min": cid_min},
-        "NAV_MAP_FPS_IC": {"average": ic_avg, "min": ic_min}
+        "NAV_MAP_FPS_CID": {"평균값": cid_avg, "최소값": cid_min},
+        "NAV_MAP_FPS_IC": {"평균값": ic_avg, "최소값": ic_min}
     }
 
 if __name__ == "__main__":
@@ -44,5 +44,5 @@ if __name__ == "__main__":
     
 
     statistics = calculate_statistics(fps_values)  # 통계 계산
-    print("NAV_MAP_FPS_CID 통계:", statistics["NAV_MAP_FPS_CID"])
+    print("NAV_MAP_FPS_CID :", statistics["NAV_MAP_FPS_CID"])
     print("NAV_MAP_FPS_IC 통계:", statistics["NAV_MAP_FPS_IC"])

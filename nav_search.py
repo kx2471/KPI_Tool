@@ -57,7 +57,7 @@ def calculate_time_difference(parsed_data):
                 # 각 시간 출력
                 print(f"가장 처음 NAV_SEARCH_END 의 타임은 {formatted_first_end_time} 초")
                 print(f"가장 직전에 나온 NAV_SEARCH_START 의 타임은 {formatted_previous_start_time} 초")
-                print(f"시간 차: {time_difference:.4f} 초")
+                print(f"시간 차: {time_difference:.4f} 초\n")
             else:
                 print("타임 포맷팅 중 오류 발생으로 계산을 수행할 수 없습니다.")
         else:

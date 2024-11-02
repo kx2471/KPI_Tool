@@ -19,7 +19,7 @@ def analyze_dlt_file(file_path):
                     marker_time = match[2]  # 96s812863087ns
                     nav_value = match[3]    # NAV_~~
                     parsed_data.append((marker_time, nav_value))
-                    print(f'Marker Time: {marker_time}, NAV Value: {nav_value}')
+                    #print(f'Marker Time: {marker_time}, NAV Value: {nav_value}')
             else:
                 print("일치하는 데이터가 없습니다.")
             

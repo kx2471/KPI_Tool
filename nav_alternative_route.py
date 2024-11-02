@@ -48,7 +48,7 @@ def calculate_route_times(parsed_data):
 
     # 결과 출력
     for name, time in results:
-        print(f"{name}의 시간 차: {time:.4f} 초")
+        print(f"{name}의 시간 차: {time:.4f} 초\n")
 
 if __name__ == "__main__":
     parsed_data = dlt_parser.open_file()  # dlt_parser.py에서 파싱된 데이터 가져오기

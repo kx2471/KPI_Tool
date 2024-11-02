@@ -23,10 +23,10 @@ def analyze_dlt_file(file_path):
                     # NAV_MAP_FPS에 대해서만 numeric_value 추가
                     if "NAV_MAP_FPS" in nav_value:
                         parsed_data.append((marker_time, nav_value, numeric_value))
-                        print(f'Marker Time: {marker_time}, NAV Value: {nav_value} : {numeric_value}')
+                        #print(f'Marker Time: {marker_time}, NAV Value: {nav_value} : {numeric_value}')
                     else:
                         parsed_data.append((marker_time, nav_value))  # numeric_value를 포함하지 않음
-                        print(f'Marker Time: {marker_time}, NAV Value: {nav_value}')
+                        #print(f'Marker Time: {marker_time}, NAV Value: {nav_value}')
             else:
                 print("일치하는 데이터가 없습니다.")
             
