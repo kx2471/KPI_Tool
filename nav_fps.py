@@ -1,4 +1,4 @@
-import dlt_parser  # dlt_parser.py 모듈을 가져옵니다.
+import dlt_fps_parser  # dlt_parser.py 모듈을 가져옵니다.
 
 def extract_fps_data(parsed_data):
     fps_values = []
@@ -39,7 +39,7 @@ def calculate_statistics(fps_values):
     }
 
 if __name__ == "__main__":
-    parsed_data = dlt_parser.open_file()  # dlt_parser.py에서 파싱된 데이터 가져오기
+    parsed_data = dlt_fps_parser.open_file()  # dlt_parser.py에서 파싱된 데이터 가져오기
     fps_values = extract_fps_data(parsed_data)  # FPS 값 추출
     
 
