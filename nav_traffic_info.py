@@ -91,3 +91,8 @@ def calculate_time_difference(parsed_data):
 if __name__ == "__main__":
     parsed_data = dlt_parser.open_file()  # dlt_parser.py에서 파싱된 데이터 가져오기
     calculate_time_difference(parsed_data)  # 시간 차 계산
+
+def main():
+    # dlt_parser에서 파싱된 데이터 가져와 계산 수행
+    parsed_data = dlt_parser.open_file()  # dlt_parser.py에서 파싱된 데이터 가져오기
+    calculate_time_difference(parsed_data)  # 시간 차 계산

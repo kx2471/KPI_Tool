@@ -39,10 +39,13 @@ def calculate_statistics(fps_values):
     }
 
 if __name__ == "__main__":
+    main()
+
+def main():
+    # dlt_parser에서 파싱된 데이터 가져와 계산 수행
     parsed_data = dlt_fps_parser.open_file()  # dlt_parser.py에서 파싱된 데이터 가져오기
     fps_values = extract_fps_data(parsed_data)  # FPS 값 추출
     
-
     statistics = calculate_statistics(fps_values)  # 통계 계산
-    print("NAV_MAP_FPS_CID :", statistics["NAV_MAP_FPS_CID"])
+    print("NAV_MAP_FPS_CID 통계:", statistics["NAV_MAP_FPS_CID"])
     print("NAV_MAP_FPS_IC 통계:", statistics["NAV_MAP_FPS_IC"])
