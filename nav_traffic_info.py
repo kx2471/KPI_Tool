@@ -19,8 +19,7 @@ def calculate_time_difference(parsed_data):
 
     nav_map_traffic_start_time = []
     nav_map_traffic_end_time = None
-    nav_map_available_start_time = None
-    nav_map_available_end_time = None
+    nav_map_traffic_end_ic_time = None
     nav_map_traffic_start_ic_time = []
 
     for marker_time, nav_value in parsed_data:
@@ -29,10 +28,8 @@ def calculate_time_difference(parsed_data):
             nav_map_traffic_start_time.append(marker_time)
         elif nav_value == "NAV_MAP_TRAFFIC_AVAILABLE_END_CID":
             nav_map_traffic_end_time = marker_time
-        elif nav_value == "NAV_MAP_AVAILABLE_START_CID":
-            nav_map_available_start_time = marker_time
-        elif nav_value == "NAV_MAP_AVAILABLE_END_CID":
-            nav_map_available_end_time = marker_time
+        elif nav_value == "NAV_MAP_TRAFFIC_AVAILABLE_END_IC":
+            nav_map_traffic_end_ic_time = marker_time
         elif nav_value == "NAV_MAP_TRAFFIC_AVAILABLE_START_IC":
             nav_map_traffic_start_ic_time.append(marker_time)
 
@@ -68,17 +65,17 @@ def calculate_time_difference(parsed_data):
         selected_traffic_start_ic_time = nav_map_traffic_start_ic_time[0]  # 가장 작은 값 선택
         formatted_traffic_start_ic_time = format_time_string(selected_traffic_start_ic_time)
 
-        if nav_map_available_start_time:
-            formatted_available_start_time = format_time_string(nav_map_available_start_time)
+        if nav_map_traffic_end_ic_time:
+            formatted_available_start_ic_time = format_time_string(nav_map_traffic_end_ic_time)
 
             # None 체크 후 시간 차 계산
-            if formatted_traffic_start_ic_time is not None and formatted_available_start_time is not None:
+            if formatted_traffic_start_ic_time is not None and formatted_available_start_ic_time is not None:
                 total_start_ic_time = float(formatted_traffic_start_ic_time)
-                total_available_start_time = float(formatted_available_start_time)
+                total_available_start_time = float(formatted_available_start_ic_time)
                 time_difference_ic = total_available_start_time - total_start_ic_time
                 
                 # 각 시간 출력
-                print(f"NAV Value: NAV_MAP_AVAILABLE_START_CID 의 타임은 {formatted_available_start_time} 초")
+                print(f"NAV Value: NAV_MAP_TRAFFIC_AVAILABLE_START_IC 의 타임은 {formatted_available_start_ic_time} 초")
                 print(f"NAV Value: NAV_MAP_TRAFFIC_AVAILABLE_START_IC 의 타임은 {formatted_traffic_start_ic_time} 초")
                 print(f"시간 차: {time_difference_ic:.4f} 초\n")
             else:
