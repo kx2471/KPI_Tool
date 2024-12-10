@@ -66,16 +66,16 @@ def calculate_time_difference(parsed_data):
         formatted_traffic_start_ic_time = format_time_string(selected_traffic_start_ic_time)
 
         if nav_map_traffic_end_ic_time:
-            formatted_available_start_ic_time = format_time_string(nav_map_traffic_end_ic_time)
+            formatted_available_end_ic_time = format_time_string(nav_map_traffic_end_ic_time)
 
             # None 체크 후 시간 차 계산
-            if formatted_traffic_start_ic_time is not None and formatted_available_start_ic_time is not None:
+            if formatted_traffic_start_ic_time is not None and formatted_available_end_ic_time is not None:
                 total_start_ic_time = float(formatted_traffic_start_ic_time)
-                total_available_start_time = float(formatted_available_start_ic_time)
+                total_available_start_time = float(formatted_available_end_ic_time)
                 time_difference_ic = total_available_start_time - total_start_ic_time
                 
                 # 각 시간 출력
-                print(f"NAV Value: NAV_MAP_TRAFFIC_AVAILABLE_START_IC 의 타임은 {formatted_available_start_ic_time} 초")
+                print(f"NAV Value: NAV_MAP_TRAFFIC_AVAILABLE_END_IC 의 타임은 {formatted_available_end_ic_time} 초")
                 print(f"NAV Value: NAV_MAP_TRAFFIC_AVAILABLE_START_IC 의 타임은 {formatted_traffic_start_ic_time} 초")
                 print(f"시간 차: {time_difference_ic:.4f} 초\n")
             else:
